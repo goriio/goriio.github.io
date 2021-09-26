@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,600;1,700&display=swap");
+
+/*======= RESET =======*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*======= VARIABLES =======*/
+
+:root {
+  --color-primary: hsl(212, 52%, 54%);
+  --color-background: hsl(220, 15%, 16%);
+  --color-background-dark: hsl(228, 9%, 10%);
+  --color-text: hsl(0, 0%, 95%);
+  --color-text-light: hsl(0, 0%, 75%);
+
+  --border-radius: 8px;
+}
+
+/*======= BASE =======*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+  font-family: "Poppins", sans-serif;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/*======= LAYOUT =======*/
+
+.header {
+  width: 100%;
+}
+
+.nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 680px) {
+  .nav {
+    left: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.nav__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: var(--border-radius);
+  background: var(--color-background-dark);
+}
+
+@media (min-width: 680px) {
+  .nav__items {
+    flex-direction: column;
+  }
+}
+
+.nav__item {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: 200ms ease;
+}
+
+.nav__item:hover {
+  background: var(--color-background);
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+}
+
+.nav__icon {
+  font-size: 2rem;
+}
+
+.nav__text {
+  display: inline-block;
+  width: 0;
+  transition: 100ms ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 680px) {
+  .nav:hover .nav__text {
+    width: 6rem;
+    margin-left: 1rem;
+    font-size: 1rem;
+    opacity: 1;
+  }
+}
+
+.home {
+  height: 100vh;
+  text-align: center;
+}
+
+@media (min-width: 680px) {
+  .home {
+    text-align: left;
+  }
+}
+
+.home__greetings {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.home__name {
+  margin-bottom: 4rem;
+  font-size: 2.75rem;
+}
+
+.go-down {
+  margin: 4rem auto;
+  font-size: 3rem;
+  color: var(--color-primary);
+  animation: up-down 2s ease-in-out infinite alternate;
+}
+
+@media (min-width: 680px) {
+  .go-down {
+    display: block;
+    text-align: center;
+  }
+}
+
+@keyframes up-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(2rem);
+  }
+}
+
+.about {
+  height: 100vh;
+  text-align: center;
+}
+
+@media (min-width: 680px) {
+  .about {
+    text-align: left;
+  }
+}
+
+.about__description {
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
+
+.tech {
+  height: 100vh;
+  text-align: center;
+}
+
+@media (min-width: 680px) {
+  .tech {
+    text-align: left;
+  }
+}
+
+.tech__stacks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact {
+  height: 100vh;
+  text-align: center;
+}
+
+/*======= COMPONENTS =======*/
+
+.stack {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+}
+
+.stack__logo {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.stack__text {
+  font-size: 1rem;
+}
+
+.sns__icon {
+  font-size: 2rem;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+@media (min-width: 680px) {
+  .container {
+    min-width: 400px;
+    padding-top: 5rem;
+  }
+}
+
+.heading {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.description {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  grid-gap: 2rem;
+  width: 200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius);
+}
