@@ -20,6 +20,8 @@
   --color-text-light: hsl(0, 0%, 75%);
 
   --border-radius: 8px;
+
+  --z-preloader: 1000;
 }
 
 /*======= BASE =======*/
@@ -51,6 +53,33 @@ a {
 }
 
 /*======= LAYOUT =======*/
+
+.preload-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-primary);
+  z-index: var(--z-preloader);
+}
+
+@keyframes go-down {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 100vh;
+  }
+}
+
+.loader {
+  font-size: 3rem;
+  font-weight: bold;
+}
 
 .header {
   width: 100%;
