@@ -5,4 +5,5 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     preloadScreen.style.display = "none";
   }, 2000);
+  alert('Lumang site ko na \'to. Gawa ako bago mga minsan. Hehe.');
 });
